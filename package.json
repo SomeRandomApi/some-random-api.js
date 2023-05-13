@@ -1,5 +1,5 @@
 {
-	"name": "some-random-api",
+	"name": "some-random-api.js",
 	"version": "1.2.0",
 	"description": "some random apis for all your needs",
 	"main": "dist/index.js",
@@ -20,7 +20,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/telkenes/some-random-api.git"
+		"url": "git@github.com:SomeRandomApi/some-random-api.js.git"
 	},
 	"keywords": [
 		"api",
@@ -29,9 +29,9 @@
 	"author": "Telk",
 	"license": "Apache-2.0",
 	"bugs": {
-		"url": "https://github.com/telkenes/some-random-api/issues"
+		"url": "https://github.com/SomeRandomApi/some-random-api.js/issues"
 	},
-	"homepage": "https://github.com/telkenes/some-random-api#readme",
+	"homepage": "https://github.com/SomeRandomApi/some-random-api.js#readme",
 	"dependencies": {
 		"node-fetch": "^2.2.0"
 	},
