@@ -17,7 +17,7 @@ export class SRAClient {
 	public baseURL = 'https://some-random-api.com';
 	public baseEndpoint = '/';
 	private endpoints!: Map<Path, Endpoint>;
-	private cooldowns: Map<Path, Cooldown> = new Map();
+	private readonly cooldowns: Map<Path, Cooldown> = new Map();
 
 	public constructor(public apiKey: string = '') {
 		this.apiKey = apiKey;
@@ -37,9 +37,8 @@ export class SRAClient {
 		const endpoint = this.endpoints.get(path)!;
 
 		if (this.cooldowns.has(path)) {
-			let cooldown = this.cooldowns.get(path)!;
-			if (cooldown.ends > Date.now())
-				await wait(this.cooldowns.get(path)?.ends! - Date.now());
+			const cooldown = this.cooldowns.get(path)!;
+			if (cooldown.ends > Date.now()) { await wait(this.cooldowns.get(path)?.ends! - Date.now()); }
 		}
 
 		const url = new URL(posix.join(this.baseEndpoint, path), this.baseURL);
